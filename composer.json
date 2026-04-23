@@ -26,5 +26,8 @@
                 "composer validate --no-check-version"
             ]
         }
+    },
+    "require": {
+        "composer/satis": "dev-main"
     }
 }
