@@ -1,0 +1,14 @@
+services:
+  satis:
+    image: composer/satis
+    user: ${UID:-1000}:${GID:-1000}
+    volumes:
+      - ./:/build
+      - ~/.composer:/composer
+  composer:
+    image: composer/composer
+    user: ${UID:-1000}:${GID:-1000}
+    volumes:
+      - ./:/app
+      - ~/.composer:/composer
+      - ~/.gitconfig:/etc/gitconfig:ro

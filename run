@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+opt="$1"
+docker=$(command -v docker >/dev/null 2>&1)
+shift
+
+case "$opt" in
+    --help)
+        echo "Helper to run project commands in the compose.yaml 'satis' container"
+        echo ""
+        echo "Options:"
+        echo "  --help        Show this help"
+        exit 0
+        ;;
+    --*)
+        echo "Unknown option '$opt'"
+        exit 1
+        ;;
+esac
+
+if ! $docker
+then
+    echo "Docker not installed!"
+    exit 1
+fi
+
+case "$opt" in
+    composer)
+        docker compose --file compose.yaml run --remove-orphans composer composer "$@"
+        ;;
+    php)
+        docker compose --file compose.yaml run --remove-orphans composer php "$@"
+        ;;
+    *)
+        echo "Unknown command '$opt'"
+        exit 1
+        ;;
+esac

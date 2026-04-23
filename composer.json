@@ -1,0 +1,30 @@
+{
+    "name": "seoladan/composer-repository",
+    "description": "Satis Repository for the Seoladan Project",
+    "version": "0.1.0",
+    "require-dev": {
+        "marcocesarato/php-conventional-changelog": "^1.17",
+        "symfony/console": "^7",
+        "brainmaestro/composer-git-hooks": "^3.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/satis": true
+        }
+    },
+    "scripts": {
+        "changelog": "vendor/bin/conventional-changelog",
+        "release": "vendor/bin/conventional-changelog --commit",
+        "release:patch": "vendor/bin/conventional-changelog --commit --patch",
+        "release:minor": "vendor/bin/conventional-changelog --commit --minor",
+        "release:major": "vendor/bin/conventional-changelog --commit --major",
+        "hooks": "vendor/bin/cghooks"
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "composer validate --no-check-version"
+            ]
+        }
+    }
+}
