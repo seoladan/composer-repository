@@ -1,0 +1,14 @@
+{
+  "name": "seoladan/composer-repository",
+  "homepage": "https://satis.seoladan.dev",
+  "output-dir": "public",
+  "repositories": [
+    { "type": "vcs", "url": "https://github.com/seoladan/bailiocht" },
+    { "type": "vcs", "url": "https://github.com/seoladan/datetime" }
+  ],
+  "archive": {
+    "directory": "dist",
+    "skip-dev": false
+  },
+  "require-all": true
+}
