@@ -4,7 +4,8 @@
   "output-dir": "public",
   "repositories": [
     { "type": "vcs", "url": "https://github.com/seoladan/bailiocht" },
-    { "type": "vcs", "url": "https://github.com/seoladan/datetime" }
+    { "type": "vcs", "url": "https://github.com/seoladan/datetime" },
+    { "type": "vcs", "url": "https://github.com/seoladan/riail" }
   ],
   "archive": {
     "directory": "dist",
